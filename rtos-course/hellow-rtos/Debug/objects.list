@@ -1,5 +1,6 @@
 "./Core/Src/main.o"
 "./Core/Src/stm32f4xx_hal_msp.o"
+"./Core/Src/stm32f4xx_hal_timebase_tim.o"
 "./Core/Src/stm32f4xx_it.o"
 "./Core/Src/syscalls.o"
 "./Core/Src/system_stm32f4xx.o"
@@ -27,6 +28,4 @@
 "./third-party/freeRtos/tasks.o"
 "./third-party/freeRtos/timers.o"
 "./third-party/freeRtos/portable/GCC/ARM_CM4F/port.o"
-"./third-party/freeRtos/portable/GCC/ARM_CM4_MPU/mpu_wrappers_v2_asm.o"
-"./third-party/freeRtos/portable/GCC/ARM_CM4_MPU/port.o"
 "./third-party/freeRtos/portable/MemMang/heap_4.o"

@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (12.3.rel1)
+# Toolchain: loxal-default
 ################################################################################
 
 ELF_SRCS := 
@@ -27,6 +27,5 @@ Core/Startup \
 Drivers/STM32F4xx_HAL_Driver/Src \
 third-party/freeRtos \
 third-party/freeRtos/portable/GCC/ARM_CM4F \
-third-party/freeRtos/portable/GCC/ARM_CM4_MPU \
 third-party/freeRtos/portable/MemMang \
 

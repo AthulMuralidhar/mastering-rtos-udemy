@@ -11,7 +11,11 @@
   *
   * This software is licensed under terms that can be found in the LICENSE file
   * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
+  * If no LICENSE file comes with this software, it is provided AS-IS
+  *
+  * DEVELOPER NOTES:
+  * - create 2 tasks
+  * - they have to print hello world to the console
   *
   ******************************************************************************
   */
@@ -21,6 +25,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "FreeRTOS.h"
+#include "task.h"
+#include "printer.h"
 
 /* USER CODE END Includes */
 
@@ -50,6 +57,8 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 /* USER CODE BEGIN PFP */
 
+static void task1_handler(void *parameters);
+static void task2_handler(void *parameters);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -65,6 +74,9 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+	TaskHandle_t task1_handle;
+	TaskHandle_t task2_handle;
+	BaseType_t status;
 
   /* USER CODE END 1 */
 
@@ -87,6 +99,20 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
+
+  // task 1
+  status = xTaskCreate(task1_handler, "task1", 200, "hello from task 1", 2, &task1_handle);
+  configASSERT(status == pdPASS );
+
+  // task 1
+  status = xTaskCreate(task2_handler, "task2", 200, "hello from task 1", 2, &task2_handle);
+  configASSERT(status == pdPASS );
+
+  // start the FreeRTOSscheduler
+  // if the below function fails for some reason, it is mostly due to the lack of memory in
+  // the heap
+  vTaskStartScheduler();
+
 
   /* USER CODE END 2 */
 
@@ -291,7 +317,42 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
+static void task1_handler(void *parameters) {
+	while (1) {
+		// seesm i have to fix the print here
+		ITMPrint(parameters);
+	}
+}
+
+static void task2_handler(void *parameters) {
+	while (1) {
+		ITMPrint(parameters);
+	}
+}
+
+
 /* USER CODE END 4 */
+
+/**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM6 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM6) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+
+  /* USER CODE END Callback 1 */
+}
 
 /**
   * @brief  This function is executed in case of error occurrence.
