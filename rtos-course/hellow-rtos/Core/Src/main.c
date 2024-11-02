@@ -25,6 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+//#include <stdio.h>
 #include "FreeRTOS.h"
 #include "task.h"
 #include "printer.h"
@@ -101,11 +102,11 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // task 1
-  status = xTaskCreate(task1_handler, "task1", 200, "hello from task 1", 2, &task1_handle);
+  status = xTaskCreate(task1_handler, "task1", 200, "hello from task 1\n", 2, &task1_handle);
   configASSERT(status == pdPASS );
 
   // task 1
-  status = xTaskCreate(task2_handler, "task2", 200, "hello from task 1", 2, &task2_handle);
+  status = xTaskCreate(task2_handler, "task2", 200, "hello from task 2\n", 2, &task2_handle);
   configASSERT(status == pdPASS );
 
   // start the FreeRTOSscheduler
