@@ -1,7 +1,7 @@
 ../third-party/freeRtos/tasks.c:1620:20:prvCreateTask	48	static
 ../third-party/freeRtos/tasks.c:1718:16:xTaskCreate	40	static
 ../third-party/freeRtos/tasks.c:1793:13:prvInitialiseNewTask	40	static
-../third-party/freeRtos/tasks.c:2019:17:prvAddNewTaskToReadyList	24	static
+../third-party/freeRtos/tasks.c:2019:17:prvAddNewTaskToReadyList	40	static
 ../third-party/freeRtos/tasks.c:2191:10:vTaskDelete	32	static
 ../third-party/freeRtos/tasks.c:2343:16:xTaskDelayUntil	48	static
 ../third-party/freeRtos/tasks.c:2435:10:vTaskDelay	24	static
@@ -10,7 +10,7 @@
 ../third-party/freeRtos/tasks.c:2643:17:uxTaskPriorityGetFromISR	40	static
 ../third-party/freeRtos/tasks.c:2691:17:uxTaskBasePriorityGet	24	static
 ../third-party/freeRtos/tasks.c:2717:17:uxTaskBasePriorityGetFromISR	40	static
-../third-party/freeRtos/tasks.c:2765:10:vTaskPrioritySet	40	static
+../third-party/freeRtos/tasks.c:2765:10:vTaskPrioritySet	48	static
 ../third-party/freeRtos/tasks.c:3121:10:vTaskSuspend	32	static
 ../third-party/freeRtos/tasks.c:3283:23:prvTaskIsTaskSuspended	32	static
 ../third-party/freeRtos/tasks.c:3353:10:vTaskResume	32	static
@@ -18,11 +18,11 @@
 ../third-party/freeRtos/tasks.c:3511:19:prvCreateIdleTasks	48	static
 ../third-party/freeRtos/tasks.c:3665:6:vTaskStartScheduler	24	static
 ../third-party/freeRtos/tasks.c:3768:6:vTaskEndScheduler	16	static
-../third-party/freeRtos/tasks.c:3811:6:vTaskSuspendAll	4	static
+../third-party/freeRtos/tasks.c:3811:6:vTaskSuspendAll	8	static
 ../third-party/freeRtos/tasks.c:3956:12:xTaskResumeAll	40	static
 ../third-party/freeRtos/tasks.c:4106:12:xTaskGetTickCount	16	static
 ../third-party/freeRtos/tasks.c:4125:12:xTaskGetTickCountFromISR	16	static
-../third-party/freeRtos/tasks.c:4160:13:uxTaskGetNumberOfTasks	4	static
+../third-party/freeRtos/tasks.c:4160:13:uxTaskGetNumberOfTasks	8	static
 ../third-party/freeRtos/tasks.c:4172:8:pcTaskGetName	24	static
 ../third-party/freeRtos/tasks.c:4385:17:uxTaskGetSystemState	32	static
 ../third-party/freeRtos/tasks.c:4465:22:xTaskGetIdleTaskHandle	16	static
@@ -37,7 +37,7 @@
 ../third-party/freeRtos/tasks.c:5506:6:vTaskSetTimeOutState	24	static
 ../third-party/freeRtos/tasks.c:5522:6:vTaskInternalSetTimeOutState	16	static
 ../third-party/freeRtos/tasks.c:5534:12:xTaskCheckForTimeOut	40	static
-../third-party/freeRtos/tasks.c:5603:6:vTaskMissedYield	4	static
+../third-party/freeRtos/tasks.c:5603:6:vTaskMissedYield	8	static
 ../third-party/freeRtos/tasks.c:5616:17:uxTaskGetTaskNumber	24	static
 ../third-party/freeRtos/tasks.c:5643:10:vTaskSetTaskNumber	24	static
 ../third-party/freeRtos/tasks.c:5748:8:prvIdleTask	16	static
