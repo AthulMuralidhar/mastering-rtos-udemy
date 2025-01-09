@@ -1,0 +1,12 @@
+/.metadata/
+.vscode
+software
+/rtos-course/.project
+/rtos-course/**/.project
+/rtos-course/**/.settings
+/rtos-course/**/Drivers
+/rtos-course/**/third-party
+
+
+
+
